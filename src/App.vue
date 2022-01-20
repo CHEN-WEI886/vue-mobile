@@ -27,5 +27,6 @@ export default {
   left: 0;
   right: 0;
   overflow-y: scroll;
+  background-color: rgb(243, 242, 242);
 }
 </style>
