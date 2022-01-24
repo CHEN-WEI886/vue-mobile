@@ -1,12 +1,10 @@
 <template>
-  <div>
+  <div class="app-container">
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
   components: {
@@ -21,6 +19,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+.center{
+  position: absolute;
+  top: 100px;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  overflow-y: scroll;
+  background-color: #EDF0F4;
+  padding: 24px;
+}
+.center > div{
+  border-radius: 10px;
 }
 </style>

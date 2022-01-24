@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    color: #637381;
+    text-decoration: none;
+}
+
+.mr10 {
+    margin-right: 10px;
+}
+.mt10 {
+    margin-top: 10px;
+}
+.mt16 {
+    margin-top: 16px;
+}
+.mb10 {
+    margin-bottom: 10px;
+}
+.mb16 {
+    margin-bottom: 16px;
+}
+.ml10 {
+    margin-left: 10px;
+}
