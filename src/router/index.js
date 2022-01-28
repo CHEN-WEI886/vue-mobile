@@ -24,6 +24,12 @@ const router = createRouter({
         }
       },
       {
+        path: '/hotel-detail',
+        name: 'hotelDetail',
+        component: () => import('@/views/hotel-detail.vue'),
+        meta: { transition: 'slide-left' }
+      },
+      {
         path: '/login',
         name: 'login',
         component: () => import('@/views/login.vue'),

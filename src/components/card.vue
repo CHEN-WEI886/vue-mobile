@@ -1,19 +1,22 @@
 <template>
   <van-card
-    num="2"
-    tag="标签"
     price="2.00"
     desc="描述信息"
     title="商品标题"
     thumb="https://img.yzcdn.cn/vant/ipad.jpeg"
-    origin-price="10.00"
-  />
+    class="card"
+  >
+    <template #tags>
+      <van-tag plain type="danger">标签</van-tag>
+      <van-tag plain type="danger">标签</van-tag>
+    </template>
+  </van-card>
 </template>
 
 <script>
 import { Card } from "vant";
 export default {
-  name: 'card',
+  name: "card",
   components: {
     [Card.name]: Card,
   },
@@ -21,4 +24,20 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.card {
+  background: #fff;
+}
+/deep/ .van-card__content {
+  padding-left: 20px;
+  div{
+    text-align: left;
+  }
+  .van-card__title{
+    font-size: 32px;
+    line-height: normal;
+  }
+  .van-card__desc{
+    font-size: 26px;
+  }
+}
 </style>

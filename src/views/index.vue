@@ -9,7 +9,11 @@
         finished-text="没有更多了"
         @load="onLoad"
       >
-        <v-card v-for="(item, index) in 10" :key="index"></v-card>
+        <v-card
+          v-for="(item, index) in 10"
+          :key="index"
+          @click="goDetail(index)"
+        ></v-card>
       </van-list>
     </van-pull-refresh>
   </div>
@@ -18,34 +22,37 @@
 
 <script>
 import navTabber from "@/components/tabber.vue";
-import vHeader from "@/components/header.vue";
 import vCard from "@/components/card.vue";
-import { List, PullRefresh  } from "vant";
+import {useRouter} from "vue-router";
+import { List, PullRefresh } from "vant";
 
 import { reactive } from "vue";
 export default {
   components: {
     navTabber,
-    vHeader,
     vCard,
-    [List.name]:List,
-    [PullRefresh.name]:PullRefresh
+    [List.name]: List,
+    [PullRefresh.name]: PullRefresh,
   },
   setup() {
+    // const route = useRoute()
+    const router = useRouter()
     const state = reactive({
-      loading:false,
-      finished:false,
-      refreshing:false,
+      loading: false,
+      finished: true,
+      refreshing: false,
       // reactive vue3新api，响应式对象取代vue2的 Object.defineProperty()
       title: "标题",
     });
-    const onLoad = (()=>{
-      
-    })
-    const onRefresh = (()=>{})
+    const onLoad = () => {};
+    const onRefresh = () => {};
+    const goDetail = (index) => {
+      router.push({name: 'hotelDetail',query:{id:index}})
+    };
     return {
       state,
       onLoad,
+      goDetail,
       onRefresh,
     };
   },

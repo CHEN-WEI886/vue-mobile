@@ -7,22 +7,22 @@
         <p>陈炜</p>
       </div>
     </div>
-    <van-cell-group class="mt16">
-      <van-cell is-link value="待使用订单" />
-      <van-cell is-link value="已完成订单" />
-    </van-cell-group>
+    <div class="br10 mt16 cellList">
+      <van-cell-group>
+        <van-cell is-link value="待使用订单" />
+        <van-cell is-link value="已完成订单" />
+      </van-cell-group>
+    </div>
   </div>
   <nav-tabber></nav-tabber>
 </template>
 
 <script>
 import navTabber from "@/components/tabber.vue";
-import vHeader from "@/components/header.vue";
 import { Cell, CellGroup } from "vant";
 export default {
   components: {
     navTabber,
-    vHeader,
     [Cell.name]: Cell,
     [CellGroup.name]: CellGroup,
   },
@@ -41,5 +41,8 @@ export default {
     height: 150px;
     border-radius: 50%;
   }
+}
+.cellList{
+  overflow: hidden;
 }
 </style>

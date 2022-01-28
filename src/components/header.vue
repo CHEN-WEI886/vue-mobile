@@ -11,6 +11,7 @@
 
 <script>
 import { NavBar } from "vant";
+import { useRouter } from 'vue-router'
 export default {
   components: {
     [NavBar.name]: NavBar,
@@ -30,8 +31,9 @@ export default {
     }
   },
   setup() {
+    const router = useRouter()
     const onClickLeft = ()=>{
-
+      router.go(-1)
     }
     return{
       onClickLeft
@@ -47,6 +49,10 @@ export default {
   .van-nav-bar__title{
     font-size: 32px;
     color: #fff;
+  }
+  .van-icon-arrow-left{
+    color: #fff;
+    font-size: 36px;
   }
 }
 </style>

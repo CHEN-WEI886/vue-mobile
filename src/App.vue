@@ -1,13 +1,22 @@
 <template>
   <div class="app-container">
-    <router-view></router-view>
+    <transition :name="'slide-right'|| 'fade'">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
+import { useRoute } from 'vue-router'
 export default {
   name: 'App',
   components: {
+    
+  },
+  setup() {
+    const route = useRoute()
+    console.log(route)
+    return {route}
   }
 }
 </script>
@@ -32,5 +41,9 @@ export default {
 }
 .center > div{
   border-radius: 10px;
+}
+.br10{
+  border-radius: 10px;
+
 }
 </style>

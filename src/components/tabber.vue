@@ -1,7 +1,7 @@
 <template>
   <div>
-    <van-tabbar route>
-      <van-tabbar-item to="/index" icon="home-o">首页</van-tabbar-item>
+    <van-tabbar route active-color='#4F77AA'>
+      <van-tabbar-item to="/index" icon="wap-home-o">首页</van-tabbar-item>
       <van-tabbar-item to="/my" icon="user-o">个人中心</van-tabbar-item>
     </van-tabbar>
   </div>
