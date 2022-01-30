@@ -1,7 +1,7 @@
 <template>
   <v-header title="个人中心" :isBack="false"></v-header>
   <div class="center">
-    <div class="user">
+    <div class="user"> 
       <img class="avide" src="@/assets/logo.png" alt="" />
       <div class="infor">
         <p>陈炜</p>
