@@ -12,7 +12,13 @@ a {
     color: #637381;
     text-decoration: none;
 }
-
+.infor {
+    background-color: #fff;
+    padding: 24px;
+    margin: 24px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+}
 .mr10 {
     margin-right: 10px;
 }

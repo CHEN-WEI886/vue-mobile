@@ -1,23 +1,41 @@
 <template>
   <div class="app-container">
-    <transition name="fade"
-                mode="out-in">
-      <router-view></router-view>
-    </transition>
+    <v-header :title="title"
+              :isBack="isBack"></v-header>
+    <router-view class="center"
+                 :class="!state.isTabber ? 'padding0 ': ''"></router-view>
+    <nav-tabber v-if="state.isTabber"></nav-tabber>
   </div>
 </template>
 
 <script>
+import navTabber from "@/components/tabber.vue";
+
 import { useRoute } from 'vue-router'
+import { reactive, computed, watch } from 'vue'
 export default {
   name: 'App',
   components: {
-
+    navTabber,
   },
   setup() {
     const route = useRoute()
-    console.log(route)
-    return { route }
+    const state = reactive({
+      isTabber: false
+    })
+    const title = computed(() => {
+      return route.meta.title
+    })
+    const isBack = computed(() => {
+      return route.meta.isBack || false
+    })
+    // 监听路由变化，是否显示底部导航栏
+    watch(() => route.name, (nval) => {
+      if (nval) {
+        state.isTabber = route.meta.isTabber
+      }
+    })
+    return { route, state, title, isBack }
   }
 }
 </script>
@@ -50,7 +68,10 @@ export default {
   right: 0;
   overflow-y: scroll;
   background-color: #edf0f4;
-  padding: 24px;
+  padding-top: 0;
+}
+.padding0 {
+  bottom: 0px;
 }
 .center > div {
   border-radius: 10px;

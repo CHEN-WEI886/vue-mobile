@@ -2,10 +2,22 @@
   <van-swipe class="my-swipe"
              :autoplay="3000"
              indicator-color="white">
-    <van-swipe-item @click="imagePreview">1</van-swipe-item>
-    <van-swipe-item>2</van-swipe-item>
-    <van-swipe-item>3</van-swipe-item>
-    <van-swipe-item>4</van-swipe-item>
+    <van-swipe-item @click="imagePreview">
+      <img src="@/assets/u405.png"
+           alt="">
+    </van-swipe-item>
+    <van-swipe-item>
+      <img src="@/assets/u405.png"
+           alt="">
+    </van-swipe-item>
+    <van-swipe-item>
+      <img src="@/assets/u405.png"
+           alt="">
+    </van-swipe-item>
+    <van-swipe-item>
+      <img src="@/assets/u405.png"
+           alt="">
+    </van-swipe-item>
   </van-swipe>
 </template>
 
@@ -41,11 +53,15 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.my-swipe .van-swipe-item {
-  color: #fff;
-  font-size: 20px;
-  line-height: 150px;
-  text-align: center;
-  background-color: #39a9ed;
+.my-swipe {
+  width: 100%;
+  .van-swipe-item {
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    img {
+      height: 500px;
+    }
+  }
 }
 </style>
