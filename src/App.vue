@@ -2,8 +2,10 @@
   <div class="app-container">
     <v-header :title="title"
               :isBack="isBack"></v-header>
-    <router-view class="center"
-                 :class="!state.isTabber ? 'padding0 ': ''"></router-view>
+    <Transition>
+      <router-view class="center"
+                   :class="!state.isTabber ? 'padding0 ': ''"></router-view>
+    </Transition>
     <nav-tabber v-if="state.isTabber"></nav-tabber>
   </div>
 </template>
@@ -48,18 +50,6 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-.slide-left-enter {
-  transform: translate(100%, 0);
-}
-.slide-left-leave-active {
-  transform: translate(-50%, 0);
-}
-.slide-right-enter {
-  transform: translate(-50%, 0);
-}
-.slide-right-leave-active {
-  transform: translate(100%, 0);
-}
 .center {
   position: absolute;
   top: 100px;
@@ -78,5 +68,14 @@ export default {
 }
 .br10 {
   border-radius: 10px;
+}
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>

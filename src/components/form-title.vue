@@ -1,6 +1,6 @@
 <template>
   <div class="form-title">
-    —— <span class="title-style"> {{title}} </span> ——
+    <span>——</span> <span class="title-style"> {{title}} </span> <span>——</span>
   </div>
 </template>
 
@@ -24,6 +24,9 @@ export default {
   margin-top: 24px;
   display: flex;
   justify-content: center;
+  span {
+    margin-right: 20px;
+  }
   .title-style {
     font-size: 34px;
     font-weight: 600;

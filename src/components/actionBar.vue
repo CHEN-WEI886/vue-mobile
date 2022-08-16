@@ -31,7 +31,11 @@ export default {
     const gotoBuy = () => {
       emit('sure')
     }
+    function onClickIcon() {
+      console.log('111')
+    }
     return {
+      onClickIcon,
       state,
       gotoBuy,
       props

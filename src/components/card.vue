@@ -7,10 +7,12 @@
     <template #tags>
       <div>
         <van-tag plain
+                 class="tag"
                  type="danger"
                  round>優惠</van-tag>
         <van-tag plain
                  type="danger"
+                 class="tag"
                  round>标签</van-tag>
       </div>
 
@@ -44,6 +46,9 @@ export default {
   }
   .van-card__desc {
     font-size: 26px;
+  }
+  .tag {
+    margin-right: 10px;
   }
 }
 </style>

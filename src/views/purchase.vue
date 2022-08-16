@@ -38,7 +38,6 @@ export default {
   },
   setup() {
     const time = ref(30 * 60 * 60 * 1000);
-    console.log(time.value)
     return { time };
   },
 };

@@ -38,7 +38,6 @@ export default {
     }
     const onConfirm = (values) => {
       const [start, end] = values;
-      console.log(start, end, 'values');
       const day = getDay(start, end)
       state.show = false;
       emit('update:date', { startDate: formatDate(start), endtDate: formatDate(end), day: day })
